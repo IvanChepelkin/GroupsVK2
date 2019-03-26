@@ -9,13 +9,13 @@ public class GroupsModelApi {
 
     @SerializedName("response")
     @Expose
-    private List<Response> response = null;
+    private Response response;
 
-    public List<Response> getResponse() {
+    public Response getResponse() {
         return response;
     }
 
-    public void setResponse(List<Response> response) {
+    public void setResponse(Response response) {
         this.response = response;
     }
 

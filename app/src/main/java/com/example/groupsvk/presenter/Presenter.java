@@ -12,8 +12,8 @@ public class Presenter {
         this.apiHelper = new ApiHelper();
     }
 
-    public void loadDataFromServer() {
-        apiHelper.getGroups("Музыка");
+    public void loadDataFromServer(String keyWord) {
+        apiHelper.getGroups(keyWord);
 
     }
 }

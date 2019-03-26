@@ -15,7 +15,7 @@ public class ApiHelper implements IApiHelper {
 
         endPointsApi = GroupsService.getInstance().getApi();
 
-        Call<GroupsModelApi> groupsModel = endPointsApi.getGroups();
+        Call<GroupsModelApi> groupsModel = endPointsApi.getGroups(keyWord);
         groupsModel.enqueue(new Callback<GroupsModelApi>() {
 
             @Override

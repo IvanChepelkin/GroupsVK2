@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.groupsvk.R;
+import com.example.groupsvk.model.network.Interactor;
 import com.example.groupsvk.presenter.Presenter;
 
 public class MainActivity extends AppCompatActivity implements IView, View.OnClickListener {
@@ -20,7 +21,8 @@ public class MainActivity extends AppCompatActivity implements IView, View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        presenter = new Presenter(this);
+        presenter = new Presenter(this, new Interactor() {
+        });
         initViews();
     }
 

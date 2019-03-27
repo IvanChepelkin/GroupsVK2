@@ -1,7 +1,6 @@
 package com.example.groupsvk.model.network;
 
 import com.example.groupsvk.model.models.GroupsModelApi;
-import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

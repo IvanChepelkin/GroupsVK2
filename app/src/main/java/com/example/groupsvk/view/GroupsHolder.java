@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.groupsvk.R;
 import com.example.groupsvk.model.models.Item;
+import com.squareup.picasso.Picasso;
 
 class GroupsHolder extends RecyclerView.ViewHolder {
     private Item modelGroup;
@@ -31,7 +32,9 @@ class GroupsHolder extends RecyclerView.ViewHolder {
         this.modelGroup = modelGroup;
         nameGroup.setText(modelGroup.getName());
         number_of_subscribers.setText(modelGroup.getType());
-      //  iconGroup.setImageURI();
+        Picasso.get()
+                .load(modelGroup.getPhoto200())
+                .into(iconGroup);
 
     }
 

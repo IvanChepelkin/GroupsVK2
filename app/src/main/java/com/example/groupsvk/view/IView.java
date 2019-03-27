@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IView {
     void setGroupsForView(List<Item> groupsList);
+    void setFailure(Throwable t);
 }

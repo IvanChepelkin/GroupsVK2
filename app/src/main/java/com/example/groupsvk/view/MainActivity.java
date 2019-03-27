@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.groupsvk.R;
 import com.example.groupsvk.model.models.Item;
@@ -14,6 +15,7 @@ import com.example.groupsvk.model.network.Interactor;
 import com.example.groupsvk.presenter.Presenter;
 
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements IView, View.OnClickListener {
     private Presenter presenter;
@@ -29,11 +31,11 @@ public class MainActivity extends AppCompatActivity implements IView, View.OnCli
         initViews();
     }
 
-        private void initViews() {
-            chooseGroups = findViewById(R.id.choose_groups);
-            search = findViewById(R.id.click_to_search);
-            recViewGroups = findViewById(R.id.recView);
-            search.setOnClickListener(this);
+    private void initViews() {
+        chooseGroups = findViewById(R.id.choose_groups);
+        search = findViewById(R.id.click_to_search);
+        recViewGroups = findViewById(R.id.recView);
+        search.setOnClickListener(this);
     }
 
     @Override
@@ -48,5 +50,11 @@ public class MainActivity extends AppCompatActivity implements IView, View.OnCli
         GroupsAdapter groupsAdapter = new GroupsAdapter(groupsList);
         recViewGroups.setAdapter(groupsAdapter);
 
+    }
+
+    @Override
+    public void setFailure(Throwable t) {
+        String error = "Error" + t;
+        Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
     }
 }

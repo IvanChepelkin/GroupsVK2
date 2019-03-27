@@ -21,7 +21,7 @@ public class Presenter implements GetNoticeIntractor.OnFinishedListener {
 
     @Override
     public void onFinished(List<Item> groupsList) {
-
+        iview.setGroupsForView(groupsList);
     }
 
     @Override

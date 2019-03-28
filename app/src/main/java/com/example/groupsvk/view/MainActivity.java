@@ -8,14 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.groupsvk.R;
 import com.example.groupsvk.model.models.Item;
 import com.example.groupsvk.model.network.Interactor;
 import com.example.groupsvk.presenter.Presenter;
-
 import java.util.List;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements IView, View.OnClickListener {
     private Presenter presenter;

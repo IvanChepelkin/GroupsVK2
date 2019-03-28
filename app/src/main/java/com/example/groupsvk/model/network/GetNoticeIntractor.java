@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface GetNoticeIntractor {
 
-    void getGroups(OnFinishedListener onFinishedListener, String keyWord);
+    void loadGroups(OnFinishedListener onFinishedListener, String keyWord);
 
     interface OnFinishedListener {
 

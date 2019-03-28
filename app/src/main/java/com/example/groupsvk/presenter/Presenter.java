@@ -7,21 +7,21 @@ import com.example.groupsvk.view.IView;
 import java.util.List;
 
 public class Presenter implements GetNoticeIntractor.OnFinishedListener {
-    private IView iview;
+    private IView view;
     private GetNoticeIntractor getNoticeIntractor;
 
     public Presenter(IView iview, GetNoticeIntractor getNoticeIntractor) {
-        this.iview = iview;
+        this.view = iview;
         this.getNoticeIntractor = getNoticeIntractor;
     }
 
     public void loadDataFromServer(String keyWord) {
-        getNoticeIntractor.getGroups(this, keyWord);
+        getNoticeIntractor.loadGroups(this, keyWord);
     }
 
     @Override
     public void onFinished(List<Item> groupsList) {
-        iview.setGroupsForView(groupsList);
+        view.setGroupsForView(groupsList);
     }
 
     @Override

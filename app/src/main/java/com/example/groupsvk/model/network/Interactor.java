@@ -15,12 +15,13 @@ public class Interactor implements GetNoticeIntractor {
     private EndPoints endPointsApi;
 
     @Override
-    public void getGroups(final OnFinishedListener onFinishedListener, String keyWord) {
+    public void loadGroups(final OnFinishedListener onFinishedListener, String keyWord) {
         endPointsApi = GroupsService.getInstance().getApi();
 
         final Call<GroupsModelApi> groupsModel = endPointsApi.getGroups(keyWord);
         groupsModel.enqueue(new Callback<GroupsModelApi>() {
 
+            @SuppressWarnings("NullableProblems")
             @Override
             public void onResponse(Call<GroupsModelApi> call, Response<GroupsModelApi> response) {
 
@@ -31,6 +32,7 @@ public class Interactor implements GetNoticeIntractor {
                 }
             }
 
+            @SuppressWarnings("NullableProblems")
             @Override
             public void onFailure(Call<GroupsModelApi> call, Throwable t) {
                 onFinishedListener.onFailure(t);

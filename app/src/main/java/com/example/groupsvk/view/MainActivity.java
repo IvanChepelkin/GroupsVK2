@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.example.groupsvk.R;
 import com.example.groupsvk.model.models.Item;
 import com.example.groupsvk.model.network.Interactor;
 import com.example.groupsvk.presenter.Presenter;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements IView, View.OnClickListener {
@@ -19,13 +21,23 @@ public class MainActivity extends AppCompatActivity implements IView, View.OnCli
     private RecyclerView recViewGroups;
     private EditText chooseGroups;
     private Button search;
+    private String spb = "Санкт-Петербург";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         presenter = new Presenter(this, new Interactor());
+
+        initLoadData(savedInstanceState);
         initViews();
+    }
+
+    private void initLoadData(Bundle savedInstanceState) {
+        if (savedInstanceState == null) {
+            presenter.loadDataFromServer(spb);
+        }
+
     }
 
     private void initViews() {

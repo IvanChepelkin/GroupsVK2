@@ -26,6 +26,6 @@ public class Presenter implements GetNoticeIntractor.OnFinishedListener {
 
     @Override
     public void onFailure(Throwable t) {
-
+        view.setFailure(t);
     }
 }
